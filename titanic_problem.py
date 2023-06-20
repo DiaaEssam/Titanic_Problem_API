@@ -27,11 +27,11 @@ warnings.filterwarnings('ignore')
 
 """# Importing the Datasets"""
 
-train_data=pd.read_csv("C:/Users/Diaa Essam/Downloads/train.csv")
+train_data=pd.read_csv("C:/Users/Diaa Essam/OneDrive/Documents/Python/.vscode/Building A Flask App For A Model/Data/train.csv")
 train_data.head()
 train_data.shape
 
-test_data_org=test_data=pd.read_csv("C:/Users/Diaa Essam/Downloads/test.csv")
+test_data_org=test_data=pd.read_csv("C:/Users/Diaa Essam/OneDrive/Documents/Python/.vscode/Building A Flask App For A Model/Data/test.csv")
 print(test_data.head())
 test_data.shape
 
