@@ -1,5 +1,0 @@
--Pickle is a useful Python tool that allows you to save your ML models, to minimise lengthy re-training and allow you to share, commit, and re-load pre-trained machine learning models.
--Pickle is a Python module for serializing and de-serializing Python object structures. It converts Python objects into a stream of bytes that can be saved to a file.
--We created an API using flask that has three web pages(predict, predict_file, route)
--We used postman to test the API and to send parameters which are variables for a specific sample and then the model makes it's predictions on it, you could also send a whole CSV file to to make the model test on it
--Postman is for API testing, you can test your model through it
