@@ -5,6 +5,8 @@ import pickle
 from titanic_problem import Sample
 import flasgger
 from flasgger import Swagger
+from PIL import Image
+import matplotlib.pyplot as plt
 
 app=Flask(__name__) # it's a common step to start with this
 Swagger(app) # pass the App to Swagger
@@ -19,7 +21,7 @@ def welcome():
     return "Welcome All"
 
 # a page for predicting one sample, can be used through Postman
-@app.route('/predict') # by default it's GET method because we will pass our features as parameters
+@app.route('/predict',methods=["POST"]) # by default it's GET method because we will pass our features as parameters
 def predict_A_sample():
     """
     Let's see who will survive
@@ -82,6 +84,7 @@ def predict_A_sample():
     Fare=request.args.get('Fare')
     Cabin=request.args.get('Cabin')
     Embarked=request.args.get('Embarked')
+
 
     prediction=classifier.predict(Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked)
     return "The passenger survived" if prediction[0]==1 else "The passenger didn't survived"
