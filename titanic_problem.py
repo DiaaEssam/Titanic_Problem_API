@@ -22,16 +22,20 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import accuracy_score
 from imblearn.pipeline import make_pipeline
+import os
 import warnings
 warnings.filterwarnings('ignore')
 
+current_directory = os.path.abspath(os.path.dirname(__file__))
+train_path = os.path.join(current_directory, "Data", "train.csv")
+test_path = os.path.join(current_directory, "Data", "test.csv")
 """# Importing the Datasets"""
 
-train_data=pd.read_csv("C:/Users/Diaa Essam/OneDrive/Documents/Python/.vscode/Building A Flask App For A Model/Data/train.csv")
+train_data=pd.read_csv(train_path)
 train_data.head()
 train_data.shape
 
-test_data_org=test_data=pd.read_csv("C:/Users/Diaa Essam/OneDrive/Documents/Python/.vscode/Building A Flask App For A Model/Data/test.csv")
+test_data_org=test_data=pd.read_csv(test_path)
 print(test_data.head())
 test_data.shape
 
@@ -240,7 +244,9 @@ test_sample=Sample()
 print(test_sample.predict(1,'diaa','female',60,1,0,'Australia',15.22,'C105','Q'))
 
 # look in the note
+pickle_file_path = os.path.join(current_directory, "Classifier.pkl")
+
 import pickle
-pickle_out=open("Classifier.pkl","wb")
+pickle_out=open(pickle_file_path,"wb")
 pickle.dump(test_sample, pickle_out)
 pickle_out.close()
