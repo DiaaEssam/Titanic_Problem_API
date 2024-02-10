@@ -1,12 +1,8 @@
 from flask import Flask,request
 import pandas as pd
-import numpy as np
 import pickle
 from titanic_problem import Sample
-import flasgger
 from flasgger import Swagger
-from PIL import Image
-import matplotlib.pyplot as plt
 import os
 
 
